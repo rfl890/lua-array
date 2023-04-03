@@ -62,4 +62,9 @@ function Array:push(value)
     table.insert(self, value)
 end
 
+function Array:getRandomElement() 
+    local randomIndex = math.random(1, #self);
+    return self[randomIndex]
+end
+
 return Array
