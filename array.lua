@@ -1,7 +1,7 @@
 local Array = {}
 
 function Array:new(b)
-    local base = b or {}
+    local base = ((type(b) == "table") and b) or {}
     setmetatable(base, self)
     self.__index = self
     return base
