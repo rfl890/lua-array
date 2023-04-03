@@ -14,7 +14,7 @@ function Array:forEach(callbackFn)
 end
 
 function Array:map(callbackFn)
-    local newArr = {}
+    local newArr = Array:new({})
     for i, v in ipairs(self) do
         local newValue = callbackFn(v, i)
         newArr[i] = newValue
@@ -23,7 +23,7 @@ function Array:map(callbackFn)
 end
 
 function Array:filter(filterFn)
-    local newArr = {}
+    local newArr = Array:new({})
     for i, v in ipairs(self) do
         local pass = filterFn(v, i)
         if pass then
@@ -32,3 +32,5 @@ function Array:filter(filterFn)
     end
     return newArr
 end
+
+return Array
