@@ -33,4 +33,33 @@ function Array:filter(filterFn)
     return newArr
 end
 
+function Array:join(sep) 
+    sep = tostring(sep) or ","
+    local str = ""
+    self:forEach(function(v, i) 
+        if (#self - i) > 0 then 
+            str = str .. tostring(v) .. sep
+        else
+            str = str .. tostring(v)
+        end
+    end)
+    return str
+end
+
+function Array:pop() 
+    local item = self[#self];
+    table.remove(self, #self);
+    return item
+end
+
+function Array:shift() 
+    local item = self[1];
+    table.remove(self, 1);
+    return item
+end
+
+function Array:push(value) 
+    table.insert(self, value)
+end
+
 return Array
