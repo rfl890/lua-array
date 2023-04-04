@@ -31,6 +31,7 @@ end)
 
 Get a random element:
 ```lua
+math.randomseed(os.time())
 local Array = require("array")
 local MyArray = Array:new({1,2,3,4,5,6,7,8,9,10})
 
